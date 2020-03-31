@@ -53,6 +53,10 @@ for name in plots_names: # construct the appropriate inclusion of the html plots
     str.append('''
 ## {}
 <iframe src="{}"
+sandbox="allow-same-origin allow-scripts"
+width="100%"
+height="100%"
+scrolling="yes"
 seamless="seamless"
 frameborder="10">
 </iframe>
