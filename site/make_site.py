@@ -39,17 +39,25 @@ for f_name in os.listdir(plots_path): # Find all the plots ending in html
 
 str = [];
 for name in plots_names: # construct the appropriate inclusion of the html plots in markdown
+#     str.append('''
+# ## {}
+# <iframe src="{}"
+#     sandbox="allow-same-origin allow-scripts"
+#     width="100%"
+#     height="100%"
+#     scrolling="no"
+#     seamless="seamless"
+#     frameborder="0">
+# </iframe>
+# '''.format(name[:-5], plots_path+name))
     str.append('''
 ## {}
 <iframe src="{}"
-    sandbox="allow-same-origin allow-scripts"
-    width="100%"
-    height="100%"
-    scrolling="no"
-    seamless="seamless"
-    frameborder="0">
+seamless="seamless"
+frameborder="10">
 </iframe>
 '''.format(name[:-5], plots_path+name))
+
 
 text = text+"".join(str) # Join with the markdown header
 
