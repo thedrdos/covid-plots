@@ -11,9 +11,14 @@ import os
 import markdown
 import codecs
 import webbrowser
+from datetime import datetime
 
 # Copy plots from original project
 os.system('cp ../../DOS-Covid-Code/Plots/* ./Plots/')
+
+# Log current time
+now = datetime.now();
+now = now.strftime("%d-%b-%Y (%H:%M:%S)")
 
 # Assign input/output files
 md_file = "./main.md"
@@ -23,14 +28,15 @@ plots_path= "./Plots/"
 # Read the markdown document and encoded it
 input_file = codecs.open(md_file, mode="r", encoding="utf-8")
 text = input_file.read()
+text = text+"\n* Updated on "+now+"\n"
 
 # Automatically add all html plots
 plots_names = []
 for f_name in os.listdir(plots_path): # Find all the plots ending in html
      if f_name.endswith('.html'):
          plots_names.append(f_name)
-      
-str = [];        
+
+str = [];
 for name in plots_names: # construct the appropriate inclusion of the html plots in markdown
     str.append('''
 ## {}
@@ -43,7 +49,7 @@ for name in plots_names: # construct the appropriate inclusion of the html plots
     frameborder="0">
 </iframe>
 '''.format(name[:-5], plots_path+name))
- 
+
 text = text+"".join(str) # Join with the markdown header
 
 # Make the webpage from the markdown
@@ -55,7 +61,10 @@ output_file = codecs.open(html_file, "w",
                           errors="xmlcharrefreplace"
 )
 output_file.write(html)
-         
+
 # Open the webpage to check it locally
 webbrowser.open("file://"+os.path.abspath(html_file))
-         
+
+# Post to the website
+os.system('git ca "Updated using script on: '+now+'"')
+os.system('git push')
