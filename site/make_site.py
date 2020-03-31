@@ -12,6 +12,7 @@ import markdown
 import codecs
 import webbrowser
 from datetime import datetime
+import time
 
 # Copy plots from original project
 os.system('cp ../../DOS-Covid-Code/Plots/* ./Plots/')
@@ -63,6 +64,7 @@ output_file = codecs.open(html_file, "w",
                           errors="xmlcharrefreplace"
 )
 output_file.write(html)
+output_file.close();
 
 # Open the webpage to check it locally
 webbrowser.open("file://"+os.path.abspath(html_file))
