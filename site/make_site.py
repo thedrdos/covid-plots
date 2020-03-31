@@ -10,6 +10,7 @@ Make a website out of some of the COVID data and processing work in an adjacent 
 import os
 import markdown
 import codecs
+import webbrowser
 
 # Copy plots from original project
 os.system('cp ../../DOS-Covid-Code/Plots/* ./Plots/')
@@ -17,10 +18,35 @@ os.system('cp ../../DOS-Covid-Code/Plots/* ./Plots/')
 # Assign input/output files
 md_file = "./main.md"
 html_file = "./index.html"
+plots_path= "./Plots/"
 
 # Read the markdown document and encoded it
 input_file = codecs.open(md_file, mode="r", encoding="utf-8")
 text = input_file.read()
+
+# Automatically add all html plots
+plots_names = []
+for f_name in os.listdir(plots_path): # Find all the plots ending in html
+     if f_name.endswith('.html'):
+         plots_names.append(f_name)
+      
+str = [];        
+for name in plots_names: # construct the appropriate inclusion of the html plots in markdown
+    str.append('''
+## {}
+<iframe src="{}"
+    sandbox="allow-same-origin allow-scripts"
+    width="100%"
+    height="100%"
+    scrolling="no"
+    seamless="seamless"
+    frameborder="0">
+</iframe>
+'''.format(name[:-5], plots_path+name))
+ 
+text = text+"".join(str) # Join with the markdown header
+
+# Make the webpage from the markdown
 html = markdown.markdown(text)
 
 # Write the encoded markdown to a file
@@ -29,5 +55,7 @@ output_file = codecs.open(html_file, "w",
                           errors="xmlcharrefreplace"
 )
 output_file.write(html)
-
-os.system("open "+html_file)
+         
+# Open the webpage to check it locally
+webbrowser.open("file://"+os.path.abspath(html_file))
+         
