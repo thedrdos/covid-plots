@@ -52,6 +52,8 @@ for name in plots_names: # construct the appropriate inclusion of the html plots
 
 text = text+"".join(str) # Join with the markdown header
 
+text = text+"## End";
+
 # Make the webpage from the markdown
 html = markdown.markdown(text)
 
@@ -66,5 +68,4 @@ output_file.write(html)
 webbrowser.open("file://"+os.path.abspath(html_file))
 
 # Post to the website
-os.system('git ca "Updated using script on: '+now+'"')
-os.system('git push')
+os.system('git ca "Updated using script on: '+now+'"'+'; git push')
