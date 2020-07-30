@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>map_viewing</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js" integrity="sha384-JpP8FXbgAZLkfur7LiK3j9AGBhHNIvF742meBJrjO2ShJDhCG2I1uVvW+0DUtrmc" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="9fc95fde-9bcc-485a-ad5c-5101c31304ed" data-root-id="7429"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="7588">
+          {"26bf3a4b-388c-4f1a-9acc-a3bd18ffc0a5":{"roots":{"references":[{"attributes":{"source":{"id":"7471"},"text":{"field":"name"},"x":{"field":"x"},"y":{"field":"y"}},"id":"7478","type":"LabelSet"},{"attributes":{"dimension":"lat"},"id":"7449","type":"MercatorTickFormatter"},{"attributes":{"fill_color":{"value":"red"},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"7473","type":"Circle"},{"attributes":{},"id":"7459","type":"HelpTool"},{"attributes":{"formatter":{"id":"7449"},"ticker":{"id":"7447"}},"id":"7446","type":"MercatorAxis"},{"attributes":{},"id":"7454","type":"PanTool"},{"attributes":{},"id":"7486","type":"UnionRenderers"},{"attributes":{"tile_source":{"id":"7468"}},"id":"7469","type":"TileRenderer"},{"attributes":{"dimension":"lon"},"id":"7439","type":"MercatorTicker"},{"attributes":{"data":{"lonlat":[[-83.76875242,40.13923427],[-83.78498252,39.91592258],[-83.80852286,39.41485808],[-83.4562016,39.56021306],[-83.01115755,39.96995815],[-83.89032084,39.69116283],[-83.76784341,40.38996525],[-83.40178317,39.89381073],[-84.22871271,40.0543329],[-84.29050975,39.75394919],[-83.0243386,39.64170392],[-84.20258189,40.33163494],[-83.37239023,40.30016061],[-84.16557457,39.42581994]],"name":["Champaign, Ohio","Clark, Ohio","Clinton, Ohio","Fayette, Ohio","Franklin, Ohio","Greene, Ohio","Logan, Ohio","Madison, Ohio","Miami, Ohio","Montgomery, Ohio","Pickaway, Ohio","Shelby, Ohio","Union, Ohio","Warren, Ohio"],"population":[38885,134083,41968,28525,1316756,168937,45672,44731,106987,531687,58457,48590,58988,234602],"x":[-9325094.863782203,-9326901.590249727,-9329522.088911628,-9290301.865652783,-9240759.788626207,-9338627.798393147,-9324993.673251877,-9284244.033735413,-9376297.40905013,-9383176.624075461,-9242227.096400326,-9373388.53947372,-9280972.026621696,-9369268.903455695],"y":[4886196.10085056,4853731.889477442,4781271.854491216,4802237.946188201,4861577.639606245,4821163.875800253,4922773.845465425,4850523.121783421,4873840.932571267,4830251.003644266,4814011.4601181615,4914252.246645448,4909657.154457529,4782851.473539276]},"selected":{"id":"7487"},"selection_policy":{"id":"7486"}},"id":"7471","type":"ColumnDataSource"},{"attributes":{},"id":"7455","type":"WheelZoomTool"},{"attributes":{"text":""},"id":"7480","type":"Title"},{"attributes":{"callback":null,"tooltips":[["Name","@name"],["Population","@population{0,0}"]]},"id":"7428","type":"HoverTool"},{"attributes":{"below":[{"id":"7438"}],"center":[{"id":"7445"},{"id":"7453"},{"id":"7478"}],"left":[{"id":"7446"}],"renderers":[{"id":"7469"},{"id":"7475"}],"title":{"id":"7480"},"toolbar":{"id":"7461"},"x_range":{"id":"7430"},"x_scale":{"id":"7434"},"y_range":{"id":"7432"},"y_scale":{"id":"7436"}},"id":"7429","subtype":"Figure","type":"Plot"},{"attributes":{"attribution":"&amp;copy; &lt;a href=\"https://www.openstreetmap.org/copyright\"&gt;OpenStreetMap&lt;/a&gt; contributors,&amp;copy; &lt;a href=\"https://cartodb.com/attributions\"&gt;CartoDB&lt;/a&gt;","url":"https://tiles.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"},"id":"7468","type":"WMTSTileSource"},{"attributes":{"axis":{"id":"7446"},"dimension":1,"ticker":null},"id":"7453","type":"Grid"},{"attributes":{},"id":"7436","type":"LinearScale"},{"attributes":{"axis":{"id":"7438"},"ticker":null},"id":"7445","type":"Grid"},{"attributes":{"formatter":{"id":"7441"},"ticker":{"id":"7439"}},"id":"7438","type":"MercatorAxis"},{"attributes":{"dimension":"lat"},"id":"7447","type":"MercatorTicker"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"red"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"7474","type":"Circle"},{"attributes":{"end":-9233638.946853744,"start":-9390297.465847924},"id":"7430","type":"Range1d"},{"attributes":{},"id":"7458","type":"ResetTool"},{"attributes":{"end":4929848.945014136,"start":4774196.754942506},"id":"7432","type":"Range1d"},{"attributes":{"dimension":"lon"},"id":"7441","type":"MercatorTickFormatter"},{"attributes":{"overlay":{"id":"7460"}},"id":"7456","type":"BoxZoomTool"},{"attributes":{"data_source":{"id":"7471"},"glyph":{"id":"7473"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"7474"},"selection_glyph":null,"view":{"id":"7476"}},"id":"7475","type":"GlyphRenderer"},{"attributes":{},"id":"7457","type":"SaveTool"},{"attributes":{},"id":"7487","type":"Selection"},{"attributes":{},"id":"7434","type":"LinearScale"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"7454"},{"id":"7455"},{"id":"7456"},{"id":"7457"},{"id":"7458"},{"id":"7459"},{"id":"7428"}]},"id":"7461","type":"Toolbar"},{"attributes":{"source":{"id":"7471"}},"id":"7476","type":"CDSView"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"7460","type":"BoxAnnotation"}],"root_ids":["7429"]},"title":"Bokeh Application","version":"2.0.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('7588').textContent;
+                  var render_items = [{"docid":"26bf3a4b-388c-4f1a-9acc-a3bd18ffc0a5","root_ids":["7429"],"roots":{"7429":"9fc95fde-9bcc-485a-ad5c-5101c31304ed"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
